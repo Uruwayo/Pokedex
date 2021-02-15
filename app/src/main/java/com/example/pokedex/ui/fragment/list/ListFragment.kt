@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import com.example.pokedex.R
 import com.example.pokedex.databinding.FragmentListBinding
 
@@ -18,6 +19,10 @@ class ListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentListBinding.inflate(inflater, container, false)
+
+        viewModel.response.observe(viewLifecycleOwner) { response ->
+
+        }
 
 
         return binding.root
